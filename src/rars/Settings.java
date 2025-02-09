@@ -126,6 +126,13 @@ public class Settings extends Observable {
          * Flag to determine whether a program uses rv64i instead of rv32i
          */
         RV64_ENABLED("rv64Enabled", false),
+
+        /**
+         * Flag to determine whether to use the "didactic calling conventions"
+         * When active returning from a function will mess up the temporary registers
+         */
+        CALLING_CONVENTIONS_ENABLED("CallingConventionsEnabled", false),
+
         /**
          * Flag to determine whether to calculate relative paths from the current working directory
          * or from the RARS executable path.

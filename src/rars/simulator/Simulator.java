@@ -351,6 +351,37 @@ public class Simulator extends Observable {
             // This is noticeable in stepped mode.
             // *********************************************************************
 
+            // for didactic purposes, put random values in the registers
+            if (Globals.getSettings().getBooleanSetting(Settings.Bool.CALLING_CONVENTIONS_ENABLED)) {
+                // update all temporary registers with a random number between 1 and 2^31 - 1
+                RegisterFile.updateRegister("t0", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t1", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t2", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t3", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t4", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t5", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("t6", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a0", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a1", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a2", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a3", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a4", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a5", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a6", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("a7", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s1", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s2", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s3", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s4", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s5", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s6", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s7", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s8", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s9", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s10", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+                RegisterFile.updateRegister("s11", (int) (Math.random() * Integer.MAX_VALUE) + 1);
+            }            
+
             RegisterFile.initializeProgramCounter(pc);
             ProgramStatement statement = null;
             int steps = 0;
